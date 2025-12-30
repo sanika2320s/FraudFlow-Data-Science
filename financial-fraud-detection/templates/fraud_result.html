@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="result-section">
+  <div class="result-card">
+    <h2 class="result-heading"><i class="fa-solid fa-gauge-high"></i> Prediction Result</h2>
+
+    <div class="result-grid">
+      <div class="res-item"><strong>CIBIL</strong><span>{{ cibil }}</span></div>
+      <div class="res-item"><strong>Fraud Info</strong><span>{{ fraud_info }}</span></div>
+      <div class="res-item"><strong>Income Source</strong><span>{{ income_source }}</span></div>
+      <div class="res-item"><strong>Tax Paid</strong><span>{{ tax_paid }}</span></div>
+      <div class="res-item"><strong>Loan Amt</strong><span>₹ {{ "{:,.2f}".format(loan_amount) }}</span></div>
+      <div class="res-item"><strong>Interest</strong><span>{{ loan_interest }}%</span></div>
+      <div class="res-item"><strong>Timely Paid</strong><span>{{ timely_paid }}</span></div>
+    </div>
+
+    <div class="prediction-box">
+      {% if label == 1 %}
+        <div class="status danger">
+          <div class="status-left">
+            <i class="fa-solid fa-triangle-exclamation fa-2x"></i>
+          </div>
+          <div class="status-right">
+            <h3>🚨 Fraud Detected</h3>
+            <p class="muted">Risk score: <strong>{{ prob }}%</strong>. Recommended: review documents and contact risk team.</p>
+          </div>
+        </div>
+      {% else %}
+        <div class="status safe">
+          <div class="status-left">
+            <i class="fa-solid fa-circle-check fa-2x"></i>
+          </div>
+          <div class="status-right">
+            <h3>✅ No Fraud Detected</h3>
+            <p class="muted">Risk score: <strong>{{ prob }}%</strong>. Keep records and monitor periodically.</p>
+          </div>
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="result-actions">
+      <a class="btn small" href="{{ url_for('fraud_form') }}"><i class="fa-solid fa-pen"></i> Edit</a>
+      <a class="btn outline" href="{{ url_for('loan_details') }}"><i class="fa-solid fa-hand-holding-dollar"></i> Loan Details</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

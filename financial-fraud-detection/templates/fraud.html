@@ -1,0 +1,32 @@
+<!-- templates/fraud.html -->
+{% extends "base.html" %}
+{% block content %}
+<section class="card card--wide">
+  <header class="card__head">
+    <h2>⚠️ Fraud Detection</h2>
+    <p class="muted">Fill the transaction details below and click <strong>Predict</strong> 🟡</p>
+  </header>
+
+  <form method="post" action="{{ url_for('predict') }}" class="form-simple">
+    <div class="grid">
+      <input name="step" placeholder="step (int)" class="input" />
+      <input name="type" placeholder="type (TRANSFER / PAYMENT / CASH_OUT)" class="input" />
+      <input name="amount" placeholder="amount (numeric)" class="input" />
+      <input name="nameOrig" placeholder="nameOrig (e.g. C123)" class="input" />
+      <input name="oldbalanceOrg" placeholder="oldbalanceOrg" class="input" />
+      <input name="newbalanceOrig" placeholder="newbalanceOrig" class="input" />
+      <input name="nameDest" placeholder="nameDest (e.g. M456)" class="input" />
+      <input name="oldbalanceDest" placeholder="oldbalanceDest" class="input" />
+      <input name="newbalanceDest" placeholder="newbalanceDest" class="input" />
+      <input name="isFlaggedFraud" placeholder="isFlaggedFraud (0 or 1)" class="input" />
+    </div>
+
+    <div class="actions">
+      <button class="btn btn--predict" type="submit">🔎 Predict</button>
+      <a class="btn btn--ghost" href="{{ url_for('home') }}">⟵ Back</a>
+    </div>
+
+    <p class="muted small">Tip: keep inputs simple — the demo will show interpreted input and prediction (if model is loaded).</p>
+  </form>
+</section>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="hero">
+  <div class="hero-card">
+    <div class="hero-left">
+      <h2 class="hero-title">Financial Detection</h2>
+      <p class="hero-sub">A modern, clean and responsive demo to check fraud risk quickly. Enter financial details and get an instant result with visual cues.</p>
+      <div class="hero-actions">
+        <a class="btn start" href="{{ url_for('fraud_form') }}"><i class="fa-solid fa-play"></i> Start Detection</a>
+        <a class="btn outline" href="{{ url_for('loan_details') }}"><i class="fa-solid fa-circle-info"></i> Loan Details</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <img src="{{ url_for('static', filename='images/roc_curve.png') }}" alt="visual" class="hero-img">
+    </div>
+  </div>
+</section>
+{% endblock %}

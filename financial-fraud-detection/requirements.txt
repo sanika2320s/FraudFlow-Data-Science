@@ -1,0 +1,7 @@
+Flask>=2.0
+joblib
+pandas
+numpy
+scikit-learn
+markupsafe
+chart.js==2.9.4     # not required by pip; Chart.js is loaded from CDN in HTML

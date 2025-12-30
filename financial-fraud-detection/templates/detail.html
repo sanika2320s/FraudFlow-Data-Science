@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="loan-section">
+  <div class="card">
+    <h2 class="card-heading"><i class="fa-solid fa-money-bill-wave"></i> Loan Details</h2>
+
+    <div class="loan-grid">
+      <div class="loan-item">
+        <h4>Loan Amount</h4>
+        <p>The total principal amount borrowed. Large exposure affects monthly cashflow and increases risk.</p>
+      </div>
+
+      <div class="loan-item">
+        <h4>Timely Payments</h4>
+        <p>On-time EMIs preserve credit score; missed/late EMIs increase default probability and fraud flags.</p>
+      </div>
+
+      <div class="loan-item">
+        <h4>Interest Rate</h4>
+        <p>Higher interest increases monthly burden. Combined with low income or tax non-compliance, risk rises.</p>
+      </div>
+
+      <div class="loan-item">
+        <h4>Impact on CIBIL</h4>
+        <p>Delinquency lowers CIBIL; multiple loans without timely payment indicate higher fraud/default risk.</p>
+      </div>
+    </div>
+
+    <a class="btn small" href="{{ url_for('fraud_form') }}"><i class="fa-solid fa-arrow-left"></i> Back to Form</a>
+  </div>
+</section>
+{% endblock %}

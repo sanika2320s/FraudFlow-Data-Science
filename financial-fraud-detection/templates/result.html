@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Result • Financial Fraud Detection</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body style="background-color:#001f3f; color:white; font-family:sans-serif; text-align:center; min-height:100vh;">
+  <header style="padding:20px;">
+    <h1 style="color:red;">Financial Detection 💳</h1>
+  </header>
+
+  <main style="padding:30px;">
+    <p style="font-size:20px;">{{ message|safe }}</p>
+    <a href="{{ url_for('home') }}" style="display:inline-block; margin-top:20px; padding:10px 20px; background-color:yellow; color:black; border-radius:8px; text-decoration:none;">⬅ Back</a>
+  </main>
+</body>
+</html>
